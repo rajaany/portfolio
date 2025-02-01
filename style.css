@@ -1,12 +1,95 @@
 
-body{
-background: hsla(300, 21%, 78%, 1);
-
-
-background: linear-gradient(90deg, hsla(300, 21%, 78%, 1) 7%, hsla(48, 58%, 82%, 1) 51%, hsla(0, 0%, 100%, 1) 100%);
+body, html{
+ height: 100%;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: hsla(300, 21%, 78%, 1);
+  background: linear-gradient(90deg, hsla(300, 21%, 78%, 1) 7%, hsla(48, 58%, 82%, 1) 51%, hsla(0, 0%, 100%, 1) 100%);
 }
+
+
+
 
 h2 {color: Grey;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 200%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+#dateTime {
+  position: absolute;
+  top: 10%;
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+}
+
+#loginPage {
+  position: absolute;
+  bottom: 20%;
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 250px;
+  background-color: #0078d4; /* Blue button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005a9e; /* Darker blue when hovered */
+}
+
+p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: red;
+}
+
+#mainContent {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
 }
