@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Home Page</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body style="display: none;" id="content">
-    <div style="text-align:center;">
-        📅 <b id="t-0">00/00/0000</b>
-        ⏰ <b id="t-2">00:00:00</b>
+  <body onload="clock();">
+    <div id="dateTime">
+      <div id="currentDate"></div>
+      <div id="currentTime"></div>
     </div>
 
-    <h1>Current date and time:</h1>
+    <div id="loginPage">
+      <h2>Please enter the password:</h2>
+      <input type="password" id="passwordInput" placeholder="Enter password">
+      <button onclick="checkPassword()">Submit</button>
+      <p id="message"></p>
+    </div>
 
-    <script src="./script.js"></script> 
+    <div id="mainContent">
+      <h1>Welcome to the Homepage!</h1>
+      <p>You're now logged in!</p>
+    </div>
   </body>
 </html>
