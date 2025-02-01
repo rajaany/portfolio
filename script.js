@@ -1,26 +1,33 @@
-function checkPassword() {
-    const password = prompt("Enter the password:");
-    if (password === "enter") {
-        document.getElementById("content").style.display = "block"; // Show content
-        clock(); // Start the clock function
-    } else {
-        alert("Incorrect password. Try again.");
-        checkPassword(); // Ask again
-    }
-}
-
 function clock() {
-    // Format date as "Saturday, February 1"
-    const options = { weekday: 'long', month: 'long', day: 'numeric' };
-    document.getElementById('t-0').textContent = new Date().toLocaleDateString('en-US', options); 
-
-    function updateClock() {
-        document.getElementById('t-2').textContent = new Date().toLocaleTimeString();
-    }
-    
-    updateClock();
-    setInterval(updateClock, 1000);
+  var currentDate = document.getElementById('currentDate');
+  var currentTime = document.getElementById('currentTime');
+  
+  // Display current date in the format "Day, Month Date"
+  currentDate.textContent = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+  
+  // Display current time
+  setInterval(function() {
+    currentTime.textContent = new Date().toLocaleTimeString();
+  }, 1000);
 }
 
-// Run the password check when the page loads
-window.onload = checkPassword;
+function checkPassword() {
+  var password = document.getElementById('passwordInput').value;
+  var message = document.getElementById('message');
+  var loginPage = document.getElementById('loginPage');
+  var mainContent = document.getElementById('mainContent');
+
+  if (password === "enter") {
+    // Hide login page and show main content
+    loginPage.style.display = "none";
+    mainContent.style.display = "block";
+  } else {
+    message.textContent = "Incorrect password. Try again.";
+    message.style.color = "red";
+  }
+}
