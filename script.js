@@ -5,7 +5,6 @@ function clock() {
   // Display current date in the format "Day, Month Date"
   currentDate.textContent = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
-    year: 'numeric',
     month: 'long',
     day: 'numeric'
   });
@@ -23,27 +22,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const message = document.getElementById("message");
   const mainContent = document.getElementById("mainContent");
 
-  // Show password input when pressing "Enter" on the button
-  startButton.addEventListener("keydown", function (event) {
+  // Listen for Enter key on the whole document
+  document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-      startButton.style.display = "none"; // Hide button
-      passwordInput.style.display = "block"; // Show password input
-      passwordInput.focus(); // Focus on input field
-    }
-  });
-
-  // Check password when pressing "Enter" in the input
-  passwordInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      if (passwordInput.value === "enter") {
-        loginPage.style.display = "none"; // Hide login page
-        mainContent.style.display = "block"; // Show main content
-      } else {
-        message.textContent = "Incorrect password. Try again.";
-        message.style.color = "red";
-        passwordInput.value = ""; // Clear input
+      // If start button is visible, hide it and show input field
+      if (startButton.style.display !== "none") {
+        startButton.style.display = "none"; 
+        passwordInput.style.display = "block"; 
+        passwordInput.focus();
+      } 
+      // Otherwise, check the password
+      else if (passwordInput.style.display === "block") {
+        if (passwordInput.value === "enter") {
+          loginPage.style.display = "none"; 
+          mainContent.style.display = "block"; 
+        } else {
+          message.textContent = "Incorrect password. Try again.";
+          message.style.color = "red";
+          passwordInput.value = ""; // Clear input
+        }
       }
     }
   });
 });
-
