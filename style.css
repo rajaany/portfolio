@@ -58,13 +58,13 @@ button, input {
 }
 
 button {
-  background-color: #007aff;
-  color: white;
+  background-color: transparent;
+  color: grey;
   cursor: pointer;
 }
 
 input {
-  background-color: white;
+  background-color: transparent;
   color: black;
 }
 
