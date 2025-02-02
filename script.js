@@ -16,18 +16,34 @@ function clock() {
   }, 1000);
 }
 
-function checkPassword() {
-  var password = document.getElementById('passwordInput').value;
-  var message = document.getElementById('message');
-  var loginPage = document.getElementById('loginPage');
-  var mainContent = document.getElementById('mainContent');
+document.addEventListener("DOMContentLoaded", function () {
+  const startButton = document.getElementById("startButton");
+  const passwordInput = document.getElementById("passwordInput");
+  const loginPage = document.getElementById("loginPage");
+  const message = document.getElementById("message");
+  const mainContent = document.getElementById("mainContent");
 
-  if (password === "enter") {
-    // Hide login page and show main content
-    loginPage.style.display = "none";
-    mainContent.style.display = "block";
-  } else {
-    message.textContent = "Incorrect password. Try again.";
-    message.style.color = "red";
-  }
-}
+  // Show password input when pressing "Enter" on the button
+  startButton.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      startButton.style.display = "none"; // Hide button
+      passwordInput.style.display = "block"; // Show password input
+      passwordInput.focus(); // Focus on input field
+    }
+  });
+
+  // Check password when pressing "Enter" in the input
+  passwordInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      if (passwordInput.value === "enter") {
+        loginPage.style.display = "none"; // Hide login page
+        mainContent.style.display = "block"; // Show main content
+      } else {
+        message.textContent = "Incorrect password. Try again.";
+        message.style.color = "red";
+        passwordInput.value = ""; // Clear input
+      }
+    }
+  });
+});
+
