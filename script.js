@@ -11,8 +11,7 @@ function clock() {
   
   // Display current time
   setInterval(function() {
-    currentTime.textContent = new Date().toLocaleTimeString();
-  }, 1000);
+    currentTime.textContent = new Date().toLocaleTimeString([], {timeStyle: 'short'});
 }
 
 document.addEventListener("DOMContentLoaded", function () {
