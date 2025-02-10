@@ -4,26 +4,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginPage = document.getElementById("loginPage");
   const message = document.getElementById("message");
   const profileName = document.getElementById("ProfileName");
+  const mainContent = document.getElementById("mainContent"); // Add if needed
 
-  // Initially, make sure ProfileName is visible
-  profileName.style.display = "block";
+  // Ensure ProfileName is visible
+  if (profileName) {
+    profileName.style.display = "block";
+  } else {
+    console.error("ProfileName element not found!");
+  }
 
   // Listen for Enter key on the whole document
   document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-      // If ProfileName is visible, hide it and show the password input
-      if (profileName.style.display !== "none") {
-        profileName.style.display = "none";
-        startButton.style.display = "none"; // Optional: Hide Start button after pressing Enter
-        passwordInput.style.display = "block"; 
-        passwordInput.focus();
+      if (startButton.style.display !== "none") {
+        startButton.style.display = "none"; // Hide the "Press Enter to Start" text
+        passwordInput.style.display = "block"; // Show password input
+        passwordInput.classList.add("show-box"); // Add class to show the border
+        passwordInput.focus(); // Focus on input field
       } 
       // Otherwise, check the password
       else if (passwordInput.style.display === "block") {
-        if (passwordInput.value === "enter") {
+        if (passwordInput.value.trim().toLowerCase() === "enter") { 
           loginPage.style.display = "none"; // Hide login page after successful login
-          // Unhide main content if password is correct
-          // mainContent.style.display = "block"; // Unhide the main content as per your needs
+          
+          if (mainContent) {
+            mainContent.style.display = "block"; // Show main content
+          } else {
+            console.warn("mainContent not found, skipping.");
+          }
         } else {
           message.textContent = "Incorrect password. Password is 'Enter'.";
           message.style.color = "red";
@@ -34,10 +42,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Clock function
 function clock() {
   var currentDate = document.getElementById('currentDate');
   var currentTime = document.getElementById('currentTime');
   
+  if (!currentDate || !currentTime) {
+    console.error("Clock elements not found!");
+    return;
+  }
+
   // Display current date in the format "Saturday, February 1"
   currentDate.textContent = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
@@ -53,3 +67,6 @@ function clock() {
   updateTime(); // Update time immediately
   setInterval(updateTime, 60000); // Update every 60 seconds (1 minute)
 }
+
+// Start the clock
+clock();
