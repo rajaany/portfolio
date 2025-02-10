@@ -42,7 +42,7 @@ h2 {color: white;
 
 #loginPage {
   position: absolute;
-  top: 30%; /* Adjust this value to move it lower */
+  top: 50%; 
   text-align: center;
   background: transparent;
   padding: 30px;
