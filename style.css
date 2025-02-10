@@ -23,14 +23,21 @@ h2 {color: Grey;
   box-sizing: border-box;
 }
 
+#currentDate {
+  font-size: 20px; 
+  color: grey;
+}
 
+#currentTime {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+}
 
 #dateTime {
   position: absolute;
   top: 10%;
   text-align: center;
-  color: #333;
-  font-size: 20px;
 }
 
 #loginPage {
