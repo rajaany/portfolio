@@ -18,6 +18,18 @@ function clock() {
   setInterval(updateTime, 60000); // Update every 60 seconds (1 minute)
 }
 
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    // Hide the instructions text when Enter is pressed
+    const instructionsText = document.getElementById('ProfileName');
+    instructionsText.style.display = 'none';
+    
+    // Show the password input field after hiding the instructions
+    const passwordInput = document.getElementById('passwordInput');
+    passwordInput.style.display = 'block';  // Show password input
+    passwordInput.focus();  // Focus on the password input
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const startButton = document.getElementById("startButton");
