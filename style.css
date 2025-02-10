@@ -98,10 +98,6 @@ input {
 
 .show-box {
   border: 2px solid #ccc;  /* Light gray border appears */
-  border-radius: 8px;
+  border-radius: 20px;
 }
 
-.show-box:focus {
-  border-color: #007bff;  /* Blue border when focused */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  /* Blue glow effect */
-}
