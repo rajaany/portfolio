@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Unhide main content if password is correct
           // mainContent.style.display = "block"; // Unhide the main content as per your needs
         } else {
-          message.textContent = "Incorrect password. Try again.";
+          message.textContent = "Incorrect password. Password is 'Enter'.";
           message.style.color = "red";
           passwordInput.value = ""; // Clear input
         }
