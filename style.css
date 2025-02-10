@@ -13,7 +13,7 @@ body, html{
 
 
 
-h2 {color: Grey;
+h2 {color: white;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 150%;
 }
@@ -25,13 +25,13 @@ h2 {color: Grey;
 
 #currentDate {
   font-size: 20px; 
-  color: grey;
+  color: white;
 }
 
 #currentTime {
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 #dateTime {
