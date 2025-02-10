@@ -61,13 +61,14 @@ h2 {color: white;
 #ProfileName {
   font-size: 18px;
   color: white;
+  outline: 1px solid black;
   margin-bottom: 10px;
   display: block; 
 }
 
 button, input {
   padding: 10px;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 8px;
   border: none;
   outline: none;
@@ -78,6 +79,7 @@ button, input {
 button {
   background-color: transparent;
   color: grey;
+  outline: 1px solid black;
   cursor: pointer;
 }
 
