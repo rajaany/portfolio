@@ -41,11 +41,11 @@ h2 {color: white;
 
 #loginPage {
   position: absolute;
-  bottom: 15%;
+  bottom: 35%;
   text-align: center;
   background: transparent;
   flex-direction: column;
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
 }
 
