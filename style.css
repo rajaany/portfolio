@@ -84,6 +84,11 @@ button {
 }
 
 input {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 8px;  /* Rounded corners for the box */
+  border: 2px solid #ccc;  /* Light gray border */
   background-color: transparent;
   color: black;
+  outline: none;  /* Remove default focus outline */
 }
