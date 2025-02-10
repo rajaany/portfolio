@@ -15,7 +15,7 @@ body, html{
 
 h2 {color: Grey;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 200%;
+  font-size: 150%;
 }
 * {
   margin: 0;
@@ -35,7 +35,7 @@ h2 {color: Grey;
 
 #loginPage {
   position: absolute;
-  bottom: 20%;
+  bottom: 15%;
   text-align: center;
   background: transparent;
   padding: 30px;
