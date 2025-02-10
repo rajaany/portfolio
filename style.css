@@ -52,6 +52,7 @@ h2 {color: white;
 
 #profilepic {
   width: 100px; 
+  align-self: center; 
   margin-bottom: 20px;
   
 }
