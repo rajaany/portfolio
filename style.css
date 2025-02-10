@@ -41,21 +41,21 @@ h2 {color: white;
 
 
 #loginPage {
+  display: flex; /* Ensures flexbox layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Centers the content vertically */
+  align-items: center; /* Centers the content horizontally */
   position: absolute;
-  bottom: 5%;
-  text-align: center;
-  background: transparent;
-  flex-direction: column;
+  bottom: 5%; /* Keep the section at the bottom of the screen */
+  width: 100%; /* Ensure the content spans the full width */
   padding: 10px;
+  background: transparent;
   border-radius: 10px;
 }
 
-
 #profilepic {
-  width: 100px; 
-  align-self: center; 
-  margin-bottom: 20px;
-  
+  width: 100px;
+  margin-bottom: 20px; /* Space between image and button */
 }
 
 button, input {
@@ -78,4 +78,3 @@ input {
   background-color: transparent;
   color: black;
 }
-
