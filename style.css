@@ -41,7 +41,7 @@ h2 {color: white;
 }
 
 #profilepic {
-  width: 80px; 
+  width: 100px; 
   position: absolute;
   top: 30%;
   
@@ -65,9 +65,11 @@ h2 {
 button, input {
   padding: 10px;
   font-size: 18px;
+  border-radius: 8px;
   border: none;
   outline: none;
   text-align: center;
+  margin: 5px;
 }
 
 button {
