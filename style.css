@@ -61,7 +61,6 @@ h2 {color: white;
   font-size: 20px;
   border: none;
   color: white;
-  outline: 1px solid black;
   margin-bottom: 10px;
   display: block; 
 }
@@ -79,7 +78,6 @@ button, input {
 button {
   background-color: transparent;
   color: grey;
-  outline: 1px solid black;
   cursor: pointer;
 }
 
