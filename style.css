@@ -62,17 +62,17 @@ h2 {color: white;
   border: none;
   color: white;
   text-shadow: 
-    -1px -1px 0 black,  
-     1px -1px 0 black,  
-    -1px  1px 0 black,  
-     1px  1px 0 black; 
+    -0.5px -0.5px 0 black,  
+     0.5px -0.5px 0 black,  
+    -0.5px  0.5px 0 black,  
+     0.5px  0.5px 0 black; 
   margin-bottom: 10px;
   display: block; 
 }
 
 button, input {
   padding: 10px;
-  font-size: 12px;
+  font-size: 15px;
   border-radius: 8px;
   border: none;
   outline: none;
@@ -89,11 +89,11 @@ button {
 input {
   padding: 10px;
   font-size: 18px;
-  border: none;  /* Initially no border */
+  border: none; 
   background-color: transparent;
   color: black;
   outline: none;
-  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
 .show-box {
