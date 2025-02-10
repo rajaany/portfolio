@@ -4,7 +4,6 @@ body, html{
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: hsla(300, 21%, 78%, 1);
   background: linear-gradient(90deg, hsla(300, 21%, 78%, 1) 7%, hsla(48, 58%, 82%, 1) 51%, hsla(0, 0%, 100%, 1) 100%);
