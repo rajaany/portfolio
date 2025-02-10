@@ -41,16 +41,14 @@ h2 {color: white;
 
 
 #loginPage {
-  width: 100%; 
+  position: absolute;
+  bottom: 15%;
   text-align: center;
-  padding: 20px;
   background: transparent;
+  padding: 30px;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px; 
 }
+
 
 #profilepic {
   width: 100px;
