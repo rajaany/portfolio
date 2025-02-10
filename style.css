@@ -44,6 +44,7 @@ h2 {color: white;
   bottom: 15%;
   text-align: center;
   background: transparent;
+  flex-direction: column;
   padding: 30px;
   border-radius: 10px;
 }
