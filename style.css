@@ -58,6 +58,12 @@ h2 {color: white;
   margin-bottom: 20px; /* Space between image and button */
 }
 
+#ProfileName {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+
 button, input {
   padding: 10px;
   font-size: 18px;
