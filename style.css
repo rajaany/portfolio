@@ -86,9 +86,19 @@ button {
 input {
   padding: 10px;
   font-size: 18px;
-  border-radius: 8px;  /* Rounded corners for the box */
-  border: 2px solid #ccc;  /* Light gray border */
+  border: none;  /* Initially no border */
   background-color: transparent;
   color: black;
-  outline: none;  /* Remove default focus outline */
+  outline: none;
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.show-box {
+  border: 2px solid #ccc;  /* Light gray border appears */
+  border-radius: 8px;
+}
+
+.show-box:focus {
+  border-color: #007bff;  /* Blue border when focused */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  /* Blue glow effect */
 }
