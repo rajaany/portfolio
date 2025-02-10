@@ -40,6 +40,11 @@ h2 {color: white;
   text-align: center;
 }
 
+#profilepic {
+  width: 100px; 
+  height: auto;  
+}
+
 #loginPage {
   position: absolute;
   bottom: 15%;
