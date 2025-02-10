@@ -1,3 +1,23 @@
+function clock() {
+  var currentDate = document.getElementById('currentDate');
+  var currentTime = document.getElementById('currentTime');
+  
+  // Display current date in the format "Saturday, February 1"
+  currentDate.textContent = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  // Function to update time every minute
+  function updateTime() {
+    currentTime.textContent = new Date().toLocaleTimeString([], { timeStyle: 'short' });
+  }
+
+  updateTime(); // Update time immediately
+  setInterval(updateTime, 60000); // Update every 60 seconds (1 minute)
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const startButton = document.getElementById("startButton");
   const passwordInput = document.getElementById("passwordInput");
