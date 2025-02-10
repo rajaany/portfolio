@@ -45,7 +45,7 @@ h2 {color: white;
   bottom: 15%;
   text-align: center;
   background: transparent;
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ h2 {color: white;
 
 #profilepic {
   width: 100px;
-  margin-bottom: 20px; /* Space between the image and button */
+  margin-bottom: 10px; /* Space between the image and button */
 }
 
 button, input {
