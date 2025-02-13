@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginPage = document.getElementById("loginPage");
   const mainContent = document.getElementById("mainContent"); 
 
-  startButton.focus();  
+  startButton.addEventListener("click", function () {
+  confirmationPopup.style.display = "flex";  // Show the pop-up
+});
+
 
   // Global keydown event for Enter press
   document.addEventListener("keydown", function (event) {
