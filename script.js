@@ -9,29 +9,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainContent = document.getElementById("mainContent"); 
 
   startButton.addEventListener("click", function () {
-  confirmationPopup.style.display = "flex";  // Show the pop-up
+  // Check if passwordInput is already visible to prevent reopening confirmation popup
+  if (passwordInput.style.display !== "block") {
+    confirmationPopup.style.display = "flex";  // Show the pop-up
+  }
 });
 
-
-  // Global keydown event for Enter press
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      if (confirmationPopup.style.display !== "flex") {
-        confirmationPopup.style.display = "flex";
-      } else if (passwordInput.style.display === "block") {
-        if (passwordInput.value.trim().toLowerCase() === "enter") {
-          loginPage.style.display = "none"; 
-          if (mainContent) mainContent.style.display = "block"; 
-        } else {
-          message.textContent = "Incorrect password. Password is 'Enter'.";
-          message.style.color = "red";
-          message.classList.add("shake");
-          setTimeout(() => message.classList.remove("shake"), 500);
-          passwordInput.value = ""; 
-        }
+// Global keydown event for Enter press
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    if (confirmationPopup.style.display !== "flex") {
+      confirmationPopup.style.display = "flex";  // Show the pop-up
+    } else if (passwordInput.style.display === "block") {
+      if (passwordInput.value.trim().toLowerCase() === "enter") {
+        loginPage.style.display = "none"; 
+        if (mainContent) mainContent.style.display = "block"; 
+      } else {
+        // Show the error message and prevent further popup logic
+        message.textContent = "Incorrect password. Password is 'Enter'.";
+        message.style.color = "red";
+        message.style.display = "block"; // Ensure message is visible
+        message.classList.add("shake");
+        setTimeout(() => message.classList.remove("shake"), 500);
+        passwordInput.value = ""; 
       }
     }
-  });
+  }
+});
+
 
   confirmOk.addEventListener("click", function () {
     confirmationPopup.style.display = "none";  
