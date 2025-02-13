@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginPage = document.getElementById("loginPage");
   const message = document.getElementById("message");
   const profileName = document.getElementById("ProfileName");
-  const mainContent = document.getElementById("mainContent"); // If needed
+  const mainContent = document.getElementById("mainContent");
   const confirmationPopup = document.getElementById("confirmationPopup");
   const confirmOk = document.getElementById("confirmOk");
   const confirmClose = document.getElementById("confirmClose");
@@ -16,11 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("ProfileName element not found!");
   }
 
-  // Show confirmation pop-up when Enter is pressed on startButton
-  startButton.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      confirmationPopup.style.display = "flex";
-    }
+  // Show confirmation pop-up when startButton is clicked
+  startButton.addEventListener("click", function () {
+    confirmationPopup.style.display = "flex";
   });
 
   // Handle "OK" button click: Hide pop-up and show password input
@@ -28,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     confirmationPopup.style.display = "none"; // Hide pop-up
     startButton.style.display = "none"; // Hide start button
     passwordInput.style.display = "block"; // Show password input
-    passwordInput.classList.add("show-box"); // Add class to show the border
+    passwordInput.classList.add("show-box"); // Add class to show border
     passwordInput.focus(); // Focus on input field
   });
 
@@ -37,9 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
     confirmationPopup.style.display = "none"; // Hide pop-up
   });
 
-  // Listen for Enter key on the document (for password submission)
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Enter" && passwordInput.style.display === "block") {
+  // Listen for Enter key on the password input field
+  passwordInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
       if (passwordInput.value.trim().toLowerCase() === "enter") { 
         loginPage.style.display = "none"; // Hide login page after successful login
 
