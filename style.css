@@ -99,13 +99,13 @@ button, input {
 }
 
 #confirmClose {
-  position: absolute; /* Position the "X" button absolutely */
-  top: 10px;  /* Space from the top */
-  right: 10px; /* Space from the right */
-  background: none; /* Optional: Remove background */
-  color: white; /* Optional: Make the "X" white */
-  border: none;  /* Optional: Remove border */
-  font-size: 24px; /* Make the "X" larger */
+  position: absolute; 
+  top: 8px;  
+  right: 8px; 
+  background: none; 
+  color: white; 
+  border: none;  
+  font-size: 18px; 
   cursor: pointer;
 }
 
