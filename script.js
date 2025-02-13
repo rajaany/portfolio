@@ -29,21 +29,30 @@ document.addEventListener("DOMContentLoaded", function () {
     confirmationPopup.style.display = "none";  // Hide pop-up
   });
 
-  // Listen for Enter key on the document (for password submission)
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Enter" && passwordInput.style.display === "block") {
-      if (passwordInput.value.trim().toLowerCase() === "enter") {
-        message.textContent = "Welcome!";
-        message.style.color = "green";  // Add a welcome message
-        passwordInput.value = "";  // Clear input
-      } else {
-        message.textContent = "Incorrect password. Try again.";
-        message.style.color = "red";  // Show error message
-        passwordInput.value = "";  // Clear input
-      }
-    }
-  });
+  if (event.key === "Enter" && passwordInput.style.display === "block") {
+    if (passwordInput.value.trim().toLowerCase() === "enter") { 
+      loginPage.style.display = "none"; // Hide login page after successful login
 
+      if (mainContent) {
+        mainContent.style.display = "block"; // Show main content
+      } else {
+        console.warn("mainContent not found, skipping.");
+      }
+    } else {
+      message.textContent = "Incorrect password. Password is 'Enter'.";
+      message.style.color = "red";
+
+      // Add the shake effect
+      message.classList.add("shake");
+
+      // Remove the shake class after the animation is done (so it can be applied again next time)
+      setTimeout(function () {
+        message.classList.remove("shake");
+      }, 500); // 500ms is the duration of the animation
+      passwordInput.value = ""; // Clear input
+    }
+  }
 });
 
 // Clock function
