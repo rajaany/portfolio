@@ -98,6 +98,17 @@ button, input {
   align-items: center;
 }
 
+#confirmClose {
+  position: absolute; /* Position the "X" button absolutely */
+  top: 10px;  /* Space from the top */
+  right: 10px; /* Space from the right */
+  background: none; /* Optional: Remove background */
+  color: white; /* Optional: Make the "X" white */
+  border: none;  /* Optional: Remove border */
+  font-size: 24px; /* Make the "X" larger */
+  cursor: pointer;
+}
+
 .popup button {
   margin-top: 10px;
   padding: 5px 10px;
