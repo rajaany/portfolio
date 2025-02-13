@@ -6,37 +6,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmOk = document.getElementById("confirmOk");
   const confirmClose = document.getElementById("confirmClose");
   const loginPage = document.getElementById("loginPage");
-  const mainContent = document.getElementById("mainContent"); 
+  const mainContent = document.getElementById("mainContent");
+
+  let isPopupShown = false; // Flag to track if the popup is shown
 
   startButton.addEventListener("click", function () {
-  // Check if passwordInput is already visible to prevent reopening confirmation popup
-  if (passwordInput.style.display !== "block") {
-    confirmationPopup.style.display = "flex";  // Show the pop-up
-  }
-});
-
-// Global keydown event for Enter press
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    if (confirmationPopup.style.display !== "flex") {
+    if (!isPopupShown) {
       confirmationPopup.style.display = "flex";  // Show the pop-up
-    } else if (passwordInput.style.display === "block") {
-      if (passwordInput.value.trim().toLowerCase() === "enter") {
-        loginPage.style.display = "none"; 
-        if (mainContent) mainContent.style.display = "block"; 
-      } else {
-        // Show the error message and prevent further popup logic
-        message.textContent = "Incorrect password. Password is 'Enter'.";
-        message.style.color = "red";
-        message.style.display = "block"; // Ensure message is visible
-        message.classList.add("shake");
-        setTimeout(() => message.classList.remove("shake"), 500);
-        passwordInput.value = ""; 
+      isPopupShown = true; // Mark the popup as shown
+    }
+  });
+
+  // Global keydown event for Enter press
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      if (!isPopupShown) {
+        confirmationPopup.style.display = "flex";  // Show the pop-up
+        isPopupShown = true; // Mark the popup as shown
+      } else if (passwordInput.style.display === "block") {
+        if (passwordInput.value.trim().toLowerCase() === "enter") {
+          loginPage.style.display = "none"; 
+          if (mainContent) mainContent.style.display = "block"; 
+        } else {
+          // Show the error message
+          message.textContent = "Incorrect password. Password is 'Enter'.";
+          message.style.color = "red";
+          message.style.display = "block"; // Ensure message is visible
+          message.classList.add("shake");
+          setTimeout(() => message.classList.remove("shake"), 500);
+          passwordInput.value = ""; 
+        }
       }
     }
-  }
-});
-
+  });
 
   confirmOk.addEventListener("click", function () {
     confirmationPopup.style.display = "none";  
