@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmationPopup = document.getElementById("confirmationPopup");
   const confirmOk = document.getElementById("confirmOk");
   const confirmClose = document.getElementById("confirmClose");
-  const loginPage = document.getElementById("loginPage"); // Added reference to loginPage
-  const mainContent = document.getElementById("mainContent"); // Make sure this is defined
-
+  const loginPage = document.getElementById("loginPage");
+  const mainContent = document.getElementById("mainContent"); 
+  
   // Ensure the start button is focused when the page loads
-  startButton.focus();  // This focuses the button on page load so Enter will work.
+  startButton.focus();  
 
   // Listen for the Enter key press on the startButton
   startButton.addEventListener("keydown", function (event) {
@@ -20,49 +20,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Handle "OK" button click: Hide pop-up and show password input
   confirmOk.addEventListener("click", function () {
-    confirmationPopup.style.display = "none";  // Hide pop-up
-    startButton.style.display = "none";  // Hide start button
-    passwordInput.style.display = "block";  // Show password input
-    passwordInput.focus();  // Focus on input field
+    confirmationPopup.style.display = "none";  
+    startButton.style.display = "none";  
+    passwordInput.style.display = "block";  
+    passwordInput.focus();  
   });
 
   // Handle "X" button click: Close the pop-up and move the password input up
   confirmClose.addEventListener("click", function () {
-    confirmationPopup.style.display = "none";  // Hide pop-up
-    startButton.style.display = "none";  // Hide start button
-    passwordInput.style.display = "block";  // Show password input
-    passwordInput.style.transition = "top 0.5s"; // Add transition for smooth movement
-    passwordInput.style.top = "20%";  // Move the input up (adjust value as needed)
-    passwordInput.focus();  // Focus on input field
+    confirmationPopup.style.display = "none";  
+    startButton.style.display = "none";  
+    passwordInput.style.display = "block";  
+    passwordInput.style.transition = "top 0.5s"; 
+    passwordInput.style.top = "20%";  
+    passwordInput.focus();  
   });
 
+  // Listen for Enter key to submit password
   document.addEventListener("keydown", function (event) {
-    // Check if password input is visible before handling Enter
     if (event.key === "Enter" && passwordInput.style.display === "block") {
       if (passwordInput.value.trim().toLowerCase() === "enter") { 
         loginPage.style.display = "none"; // Hide login page after successful login
 
         if (mainContent) {
-          mainContent.style.display = "block"; // Show main content
+          mainContent.style.display = "block"; 
         } else {
           console.warn("mainContent not found, skipping.");
         }
       } else {
         message.textContent = "Incorrect password. Password is 'Enter'.";
         message.style.color = "red";
-        message.style.display = "block"; // Make sure the message is visible
-
-        // Add the shake effect
+        message.style.display = "block"; 
         message.classList.add("shake");
 
-        // Remove the shake class after the animation is done (so it can be applied again next time)
         setTimeout(function () {
           message.classList.remove("shake");
-        }, 500); // 500ms is the duration of the animation
-        passwordInput.value = ""; // Clear input
+        }, 500); 
+        passwordInput.value = ""; 
       }
     }
   });
+});
 
   // Clock function
   function clock() {
