@@ -123,6 +123,7 @@ button, input {
 
 #message {
   color: red;
+  display: none;  /* Initially hidden */
 }
 
 .shake {
