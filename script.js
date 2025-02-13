@@ -36,6 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
           setTimeout(() => message.classList.remove("shake"), 500);
           passwordInput.value = ""; 
         }
+      } else if (confirmationPopup.style.display === "flex") {
+        // Close the popup when Enter is pressed
+        confirmationPopup.style.display = "none";
+        startButton.style.display = "none";
+        passwordInput.style.display = "block";
+        passwordInput.focus();
       }
     }
   });
