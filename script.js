@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmOk = document.getElementById("confirmOk");
   const confirmClose = document.getElementById("confirmClose");
   const loginPage = document.getElementById("loginPage"); // Added reference to loginPage
-
+  const mainContent = document.getElementById("mainContent"); // Make sure this is defined
+  
   // Ensure the start button is focused when the page loads
   startButton.focus();  // This focuses the button on page load so Enter will work.
 
@@ -25,11 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
     passwordInput.focus();  // Focus on input field
   });
 
-  // Handle "X" button click: Close the pop-up
+  // Handle "X" button click: Close the pop-up and move the password input up
   confirmClose.addEventListener("click", function () {
     confirmationPopup.style.display = "none";  // Hide pop-up
     startButton.style.display = "none";  // Hide start button
     passwordInput.style.display = "block";  // Show password input
+    passwordInput.style.transition = "top 0.5s"; // Add transition for smooth movement
+    passwordInput.style.top = "20%";  // Move the input up (adjust value as needed)
     passwordInput.focus();  // Focus on input field
   });
 
@@ -60,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+});
 
   // Clock function
   function clock() {
