@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Handle "X" button click: Close the pop-up
   confirmClose.addEventListener("click", function () {
     confirmationPopup.style.display = "none";  // Hide pop-up
+    startButton.style.display = "none";  // Hide start button
+    passwordInput.style.display = "block";  // Show password input
+    passwordInput.focus();  // Focus on input field
   });
 
   document.addEventListener("keydown", function (event) {
