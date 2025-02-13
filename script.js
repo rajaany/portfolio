@@ -1,58 +1,50 @@
 document.addEventListener("DOMContentLoaded", function () {
   const startButton = document.getElementById("startButton");
   const passwordInput = document.getElementById("passwordInput");
-  const loginPage = document.getElementById("loginPage");
   const message = document.getElementById("message");
-  const profileName = document.getElementById("ProfileName");
-  const mainContent = document.getElementById("mainContent");
   const confirmationPopup = document.getElementById("confirmationPopup");
   const confirmOk = document.getElementById("confirmOk");
   const confirmClose = document.getElementById("confirmClose");
 
-  // Ensure ProfileName is visible
-  if (profileName) {
-    profileName.style.display = "block";
-  } else {
-    console.error("ProfileName element not found!");
-  }
+  // Ensure the start button is focused when the page loads
+  startButton.focus();  // This focuses the button on page load so Enter will work.
 
-  // Show confirmation pop-up when startButton is clicked
-  startButton.addEventListener("click", function () {
-    confirmationPopup.style.display = "flex";
+  // Listen for the Enter key press on the startButton
+  startButton.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      confirmationPopup.style.display = "flex";  // Show the pop-up
+    }
   });
 
   // Handle "OK" button click: Hide pop-up and show password input
   confirmOk.addEventListener("click", function () {
-    confirmationPopup.style.display = "none"; // Hide pop-up
-    startButton.style.display = "none"; // Hide start button
-    passwordInput.style.display = "block"; // Show password input
-    passwordInput.classList.add("show-box"); // Add class to show border
-    passwordInput.focus(); // Focus on input field
+    confirmationPopup.style.display = "none";  // Hide pop-up
+    startButton.style.display = "none";  // Hide start button
+    passwordInput.style.display = "block";  // Show password input
+    passwordInput.focus();  // Focus on input field
   });
 
   // Handle "X" button click: Close the pop-up
   confirmClose.addEventListener("click", function () {
-    confirmationPopup.style.display = "none"; // Hide pop-up
+    confirmationPopup.style.display = "none";  // Hide pop-up
   });
 
-  // Listen for Enter key on the password input field
-  passwordInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      if (passwordInput.value.trim().toLowerCase() === "enter") { 
-        loginPage.style.display = "none"; // Hide login page after successful login
-
-        if (mainContent) {
-          mainContent.style.display = "block"; // Show main content
-        } else {
-          console.warn("mainContent not found, skipping.");
-        }
+  // Listen for Enter key on the document (for password submission)
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && passwordInput.style.display === "block") {
+      if (passwordInput.value.trim().toLowerCase() === "enter") {
+        message.textContent = "Welcome!";
+        message.style.color = "green";  // Add a welcome message
+        passwordInput.value = "";  // Clear input
       } else {
-        message.textContent = "Incorrect password. Password is 'Enter'.";
-        message.style.color = "red";
-        passwordInput.value = ""; // Clear input
+        message.textContent = "Incorrect password. Try again.";
+        message.style.color = "red";  // Show error message
+        passwordInput.value = "";  // Clear input
       }
     }
   });
+
+});
 
 // Clock function
 function clock() {
