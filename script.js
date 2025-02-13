@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmationPopup = document.getElementById("confirmationPopup");
   const confirmOk = document.getElementById("confirmOk");
   const confirmClose = document.getElementById("confirmClose");
+  const loginPage = document.getElementById("loginPage"); // Added reference to loginPage
 
   // Ensure the start button is focused when the page loads
   startButton.focus();  // This focuses the button on page load so Enter will work.
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.addEventListener("keydown", function (event) {
+    // Check if password input is visible before handling Enter
     if (event.key === "Enter" && passwordInput.style.display === "block") {
       if (passwordInput.value.trim().toLowerCase() === "enter") { 
         loginPage.style.display = "none"; // Hide login page after successful login
@@ -56,31 +58,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-// Clock function
-function clock() {
-  var currentDate = document.getElementById('currentDate');
-  var currentTime = document.getElementById('currentTime');
+  // Clock function
+  function clock() {
+    var currentDate = document.getElementById('currentDate');
+    var currentTime = document.getElementById('currentTime');
   
-  if (!currentDate || !currentTime) {
-    console.error("Clock elements not found!");
-    return;
+    if (!currentDate || !currentTime) {
+      console.error("Clock elements not found!");
+      return;
+    }
+
+    // Display current date in the format "Saturday, February 1"
+    currentDate.textContent = new Date().toLocaleDateString('en-US', {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    // Function to update time every minute
+    function updateTime() {
+      currentTime.textContent = new Date().toLocaleTimeString([], { timeStyle: 'short' });
+    }
+
+    updateTime(); // Update time immediately
+    setInterval(updateTime, 60000); // Update every 60 seconds (1 minute)
   }
 
-  // Display current date in the format "Saturday, February 1"
-  currentDate.textContent = new Date().toLocaleDateString('en-US', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric'
-  });
-
-  // Function to update time every minute
-  function updateTime() {
-    currentTime.textContent = new Date().toLocaleTimeString([], { timeStyle: 'short' });
-  }
-
-  updateTime(); // Update time immediately
-  setInterval(updateTime, 60000); // Update every 60 seconds (1 minute)
-}
-
-// Start the clock
-clock();
+  // Start the clock
+  clock();
+});
