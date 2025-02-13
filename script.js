@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmClose = document.getElementById("confirmClose");
   const loginPage = document.getElementById("loginPage"); // Added reference to loginPage
   const mainContent = document.getElementById("mainContent"); // Make sure this is defined
-  
+
   // Ensure the start button is focused when the page loads
   startButton.focus();  // This focuses the button on page load so Enter will work.
 
@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-});
 
   // Clock function
   function clock() {
