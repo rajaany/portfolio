@@ -93,15 +93,23 @@ button, input {
   border-radius: 10px;
 }
 
+.popup-window {
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden; 
+  width: 300px;
+}
+
 .popup-window-title {
   background-color: #8c5afb;
   color: white;
-  padding: 13px var(--default-padding);
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  cursor: default;
-  user-select: none;
+  align-items: center;
 }
 
 .popup-content {
