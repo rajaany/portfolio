@@ -99,10 +99,10 @@ button, input {
   font-family: monospace;
   border-radius: 2px;
   overflow: hidden; 
-  height: 50px;
+  height: 200px;
   width: 300px;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .popup-window-title {
