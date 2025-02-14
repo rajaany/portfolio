@@ -103,8 +103,7 @@ button, input {
   overflow: hidden; 
   height: 200px;
   width: 300px;
-  align-items: center;
-  padding-top: 100px;
+  text-align: center;
 }
 
 .popup-window-title {
