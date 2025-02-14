@@ -99,7 +99,7 @@ button, input {
   font-family: monospace;
   border-radius: 3px;
   overflow: hidden; 
-  height: 400px;
+  height: 200px;
   width: 300px;
   align-items: center;
   margin-top: 20px;
@@ -134,7 +134,7 @@ button, input {
 }
 
 .popup button {
-  margin: 5px;
+  margin: 10px;
   padding: 5px 10px;
   border: none;
   background-color: #f1f1f1;
