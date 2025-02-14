@@ -106,6 +106,10 @@ button, input {
   text-align: center;
 }
 
+#popupmessage {
+  padding: 20px;
+}
+
 .popup-window-title {
   background-color: #C1CFF5;
   color: white;
