@@ -55,7 +55,7 @@ h2 {color: white;
 
 #profilepic {
   width: 90px;
-  margin-bottom: 5px; /* Space between image and button */
+  margin-bottom: 5px; 
 }
 
 #ProfileName {
@@ -67,7 +67,7 @@ h2 {color: white;
      0.2px -0.2px 0 grey,  
     -0.2px  0.2px 0 grey,  
      0.2px  0.2px 0 grey; 
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   display: block; 
 }
 
