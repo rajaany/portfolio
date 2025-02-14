@@ -104,7 +104,7 @@ button, input {
   height: 200px;
   width: 300px;
   align-items: center;
-  margin: 100px;
+  padding: 100px;
 }
 
 .popup-window-title {
