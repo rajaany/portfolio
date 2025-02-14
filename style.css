@@ -97,9 +97,9 @@ button, input {
   background-color: white;
   color: black;
   font-family: monospace;
-  border-radius: 2px;
+  border-radius: 3px;
   overflow: hidden; 
-  height: 200px;
+  height: 400px;
   width: 300px;
   align-items: center;
   margin-top: 20px;
@@ -109,7 +109,7 @@ button, input {
   background-color: #C1CFF5;
   color: white;
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -129,12 +129,12 @@ button, input {
   background: none; 
   color: white; 
   border: none;  
-  font-size: 18px; 
+  font-size: 15px; 
   cursor: pointer;
 }
 
 .popup button {
-  margin-top: 20px;
+  margin: 5px;
   padding: 5px 10px;
   border: none;
   background-color: #f1f1f1;
