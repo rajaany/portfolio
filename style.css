@@ -90,6 +90,7 @@ button, input {
   background-color: rgba(237, 241, 245);
   color: grey;
   padding: 20px;
+  overflow: hidden;
   border-radius: 2px;
 }
 
