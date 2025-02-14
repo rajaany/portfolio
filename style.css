@@ -108,6 +108,7 @@ button, input {
 .popup-window-title {
   background-color: #C1CFF5;
   color: white;
+  font-family: monospace;
   padding: 5px 10px;
   font-size: 13px;
   font-weight: bold;
