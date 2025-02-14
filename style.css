@@ -93,7 +93,7 @@ button, input {
   border-radius: 10px;
 }
 
-.popup-window {
+.popup-window-title {
   background-color: #8c5afb;
   color: white;
   padding: 13px var(--default-padding);
