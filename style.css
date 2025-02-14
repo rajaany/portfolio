@@ -38,15 +38,16 @@ h2 {color: white;
   text-align: center;
 }
 
+/* Overall format of the page */
 
 #loginPage {
-  display: flex; /* Ensures flexbox layout */
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Centers the content vertically */
-  align-items: center; /* Centers the content horizontally */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
   position: absolute;
-  bottom: 5%; /* Keep the section at the bottom of the screen */
-  width: 100%; /* Ensure the content spans the full width */
+  bottom: 5%; 
+  width: 100%; 
   padding: 10px;
   background: transparent;
   border-radius: 10px;
@@ -82,7 +83,6 @@ button, input {
 
 .popup {
   display: none; /* Initially hidden */
-  clip: rect(1px, 1px, 1px, 1px);
   position: fixed;
   top: 50%;
   left: 50%;
