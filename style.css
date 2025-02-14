@@ -90,14 +90,14 @@ button, input {
   background-color: rgba(237, 241, 245);
   color: grey;
   padding: 20px;
-  overflow: hidden;
+  width: 300px;
   border-radius: 2px;
 }
 
 .popup-window {
   background-color: white;
   color: black;
-  border-radius: 8px;
+  border-radius: 2px;
   overflow: hidden; 
   width: 300px;
 }
