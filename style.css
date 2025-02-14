@@ -96,6 +96,7 @@ button, input {
 .popup-window {
   background-color: white;
   color: black;
+  font-family: monospace;
   border-radius: 2px;
   overflow: hidden; 
   height: 500px;
