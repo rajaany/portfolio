@@ -93,6 +93,17 @@ button, input {
   border-radius: 10px;
 }
 
+.popup-window {
+  background-color: #8c5afb;
+  color: white;
+  padding: 13px var(--default-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+  user-select: none;
+}
+
 .popup-content {
   display: flex;
   flex-direction: column;
