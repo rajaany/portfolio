@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Global keydown event for Enter press
+  
   document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       if (!isPopupShown) {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Show the error message
           message.textContent = "Incorrect password. Password is 'Enter'.";
           message.style.color = "red";
-          message.style.display = "block"; // Ensure message is visible
+          message.style.display = "block"; 
           message.classList.add("shake");
           setTimeout(() => message.classList.remove("shake"), 500);
           passwordInput.value = ""; 
@@ -86,5 +86,5 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(updateTime, 60000);
   }
 
-  clock(); // Start the clock
+  clock(); 
 });
