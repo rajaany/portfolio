@@ -101,13 +101,13 @@ button, input {
   font-family: monospace;
   border-radius: 3px;
   overflow: hidden; 
-  height: 200px;
+  height: 175px;
   width: 300px;
   text-align: center;
 }
 
 #popupMessage {
-  padding: 20px;
+  padding: 30px;
 }
 
 .popup-window-title {
