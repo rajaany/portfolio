@@ -25,8 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         isPopupShown = true; // Mark the popup as shown
       } else if (passwordInput.style.display === "block") {
         if (passwordInput.value.trim().toLowerCase() === "enter") {
-          loginPage.style.display = "none"; 
-          if (mainContent) mainContent.style.display = "block"; 
+          window.location.href = "homepage.html"; 
         } else {
           // Show the error message
           message.textContent = "Incorrect password. Password is 'Enter'.";
