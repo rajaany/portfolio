@@ -7,30 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button class="tablink" onclick="tabHeader('File')" id="defaultOpen">File</button>
-    <button class="tablink" onclick="tabHeader('Edit')">Edit</button>
-    <button class="tablink" onclick="tabHeader('Profiles')">Profiles</button>
-    <button class="tablink" onclick="tabHeader('Help')">Oslo</Help>
-   <div class="desktop">
-        <a href="about.html" class="folder">
-            <img src="folder-icon.png" alt="About Folder">
-            <p>About Me</p>
-        </a>
+     <main class="container">
+        <div class="folders">
+            <button class="folder" onclick="openPopup('aboutPopup')">About Me</button>
+            <button class="folder">My Experience</button>
+            <button class="folder">My Projects</button>
+            <button class="folder" onclick="openPopup('socialsPopup')">Socials</button>
+        </div>
+    </main>
 
-        <a href="projects.html" class="folder">
-            <img src="folder-icon.png" alt="Projects Folder">
-            <p>Projects</p>
-        </a>
+    <footer class="bottom-nav">
+        <button class="bottom-btn"> Chatbot</button>
+        <button class="bottom-btn"> Settings</button>
+        <button class="bottom-btn"> Calculator</button>
+    </footer>
 
-       <a href="experiences.html" class="folder">
-           <img src="folder-icon.png" alt="Experiences Folder">
-           <p> Experiences</p>
-       </a>
-
-        <a href="contact.html" class="folder">
-            <img src="folder-icon.png" alt="Contact Folder">
-            <p>Contact</p>
-        </a>
+    <!-- Popups -->
+    <div id="aboutPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('aboutPopup')">&times;</span>
+            <p>About Me content here...</p>
+        </div>
     </div>
+    <div id="socialsPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('socialsPopup')">&times;</span>
+            <p>Social links here...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
